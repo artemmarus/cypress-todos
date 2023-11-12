@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-11-12T18:53:30.976Z",
+    "end": "2023-11-12T18:53:38.027Z",
+    "duration": 7051
+  },
+  "results": [
+    {
+      "uuid": "524a9ea3-8dcd-4a5e-9b6c-7a35b15ab42b",
+      "title": "",
+      "fullFile": "cypress/e2e/todos.spec.ts",
+      "file": "cypress/e2e/todos.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71e9ad66-71e4-49c4-afe8-388a14acd441",
+          "title": "Todo Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to add new task",
+              "fullTitle": "Todo Page should be able to add new task",
+              "timedOut": null,
+              "duration": 1791,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "todoPage.createNewTask(taskName)\n    .verifyTaskExists(taskName)\n    .verifyTasksLeft(1);",
+              "err": {},
+              "uuid": "c049c59a-1dc4-4ff3-bb20-d8b2ccf43a2d",
+              "parentUUID": "71e9ad66-71e4-49c4-afe8-388a14acd441",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to add task and mark as completed",
+              "fullTitle": "Todo Page should be able to add task and mark as completed",
+              "timedOut": null,
+              "duration": 2178,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "todoPage.createNewTask(taskName)\n    .verifyTaskExists(taskName)\n    .verifyTasksLeft(1);\ncy.shouldNotExist(todoPage.clearCompletedButton);\ntodoPage.completeTask(taskName)\n    .verifyTaskCompleted(taskName)\n    .verifyTasksLeft(0);\ntodoPage.showCompletedTasks()\n    .verifyTaskExists(taskName)\n    .clearCompletedTasks();",
+              "err": {},
+              "uuid": "c10fa14f-69ef-4c7d-8e6e-34181f9d0e62",
+              "parentUUID": "71e9ad66-71e4-49c4-afe8-388a14acd441",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to add and delete task from TODO list",
+              "fullTitle": "Todo Page should be able to add and delete task from TODO list",
+              "timedOut": null,
+              "duration": 1188,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "todoPage.createNewTask(taskName)\n    .verifyTaskExists(taskName)\n    .deleteTask(taskName)\n    .verifyTaskExists(taskName, false);",
+              "err": {},
+              "uuid": "a0bb5b0a-5614-454d-865f-b0965eeb5f40",
+              "parentUUID": "71e9ad66-71e4-49c4-afe8-388a14acd441",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to create tasks and filter them",
+              "fullTitle": "Todo Page should be able to create tasks and filter them",
+              "timedOut": null,
+              "duration": 1781,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "todoPage.createNewTask(taskName)\n    .verifyTaskExists(taskName);\ntodoPage.createNewTask(completedTaskName)\n    .verifyTaskExists(completedTaskName);\ntodoPage.verifyTasksLeft(2);\ntodoPage.completeTask(completedTaskName);\ntodoPage.showActiveTasks()\n    .verifyTaskExists(taskName);\ntodoPage.showCompletedTasks()\n    .verifyTaskExists(completedTaskName);",
+              "err": {},
+              "uuid": "e760782e-fe8f-4148-ac4e-128352269320",
+              "parentUUID": "71e9ad66-71e4-49c4-afe8-388a14acd441",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c049c59a-1dc4-4ff3-bb20-d8b2ccf43a2d",
+            "c10fa14f-69ef-4c7d-8e6e-34181f9d0e62",
+            "a0bb5b0a-5614-454d-865f-b0965eeb5f40",
+            "e760782e-fe8f-4148-ac4e-128352269320"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6938,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

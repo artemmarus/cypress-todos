@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cypress": "^13.5.0"
+  },
+
+  "scripts": {
+    "test": "cypress run --headless", 
+    "pretest": "rm -rf ./cypress/results && rm -rf ./cypress/report", 
+    "merge-results": "mochawesome-merge 'cypress/results/*.json' -o cypress/results/merged-report.json",
+    "form-report": "marge cypress/results/merged-report.json -o cypress/report", 
+    "posttest": "npm run merge-results && npm run form-report"
+  }
+}
