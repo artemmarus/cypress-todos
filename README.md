@@ -1,4 +1,4 @@
-#  Test Tas for QA Automation
+#  Test Task for QA Automation
 
 
 ## Running Tests Locally
